@@ -140,6 +140,8 @@ public class nodoPerson {
                 System.out.println("\nInsertado a la derecha...");    // se inserta
                 System.out.println(right.id);
                 System.out.println(right.name);
+                System.out.println(right.firstLastName);
+                System.out.println(right.secondLastName);
             } else {
                 right.insertar(d,n,fn,sn);// en caso de que ya hubiera uno insertado a la derecha pero el nuevo es mayor se corre al siguiente nodo
             }
