@@ -16,7 +16,7 @@ public class Main {
 
     
     
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
         Person persona = new Person();
 //         persona.insertNodo(1,"javi","lopex","valverde");
 //         persona.insertNodo(5,"messi ","lopez","valverde");
@@ -42,11 +42,12 @@ public class Main {
             while ((linea = br.readLine()) != null) {
                 
                 String[] datos = linea.split(",");
-                System.out.println(datos.length);
+                
                 if (datos != null) {
                    persona.insertNodo(Integer.valueOf(datos[0]),datos[5],datos[6],datos[7]);
                  
                 }
+                
 
             }
         } catch (Exception e) {
@@ -62,11 +63,10 @@ public class Main {
                 e2.printStackTrace();
             }
         }
-        
+        long inicio = System.currentTimeMillis();
+         
     }
     
-    private static void loadFile() throws FileNotFoundException {
-       
-    }   
+    
 }
             
