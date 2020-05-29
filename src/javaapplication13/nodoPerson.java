@@ -126,9 +126,9 @@ public class nodoPerson {
         if (d < id) {                   // si d es menor que dato si insertarÃ¡ a la izquierda
             if (left == null) {             // en caso de que el nodo estÃ© vacio
                 left = new nodoPerson(d,n,fn,sn);  // se crea uno nuevo
-                System.out.println(left.id);
-                System.out.println(left.name);
-                System.out.println("\nInsertado a la izquierda..."); // se inserta
+                
+                System.out.println("Insertado a la izquierda..."); // se inserta
+                System.out.println(left.id+"\n");
             } else {
                 left.insertar(d,n,fn,sn); // en caso de que ya hubiera uno insertado a la izquierda pero el nuevo es menor se corre al siguiente nodo
             }
@@ -137,11 +137,9 @@ public class nodoPerson {
         if (d > id) {                       // si d es mayor que dato si insertarÃ¡ a la derecha
             if (right == null) {                 // en caso de que el nodo estÃ© vasio
                 right = new nodoPerson(d,n,fn,sn);      // se crea uno nuevo
+                
                 System.out.println("\nInsertado a la derecha...");    // se inserta
-                System.out.println(right.id);
-                System.out.println(right.name);
-                System.out.println(right.firstLastName);
-                System.out.println(right.secondLastName);
+                System.out.println(right.id+"\n");
             } else {
                 right.insertar(d,n,fn,sn);// en caso de que ya hubiera uno insertado a la derecha pero el nuevo es mayor se corre al siguiente nodo
             }
@@ -149,7 +147,6 @@ public class nodoPerson {
         }
 
     }//fin insertar
-
     public int returnValue() {  // Función que vuelva a insertar otro dato
         return (id);          // retorna a dato
     }

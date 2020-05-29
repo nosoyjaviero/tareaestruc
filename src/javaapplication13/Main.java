@@ -13,25 +13,23 @@ import java.io.*;
  * @author Nikole Moraga
  */
 public class Main {
+//
 
-    
-    
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
         Person persona = new Person();
-//         persona.insertNodo(1,"javi","lopex","valverde");
-//         persona.insertNodo(5,"messi ","lopez","valverde");
-//         persona.insertNodo(3,"cr7 ","lopez","valverde");
-//         persona.insertNodo(9,"xavi ","lopez","valverde");
-//         persona.insertNodo(7,"link ","lopez","valverde");
-////         persona.insertNodo(2,"javier ","lopez","valverde");
-////         persona.insertNodo(8,"javier ","lopez","valverde");
-//         
-      
-       
+        persona.insertNodo(8, "javi", "lopex", "valverde");
+        persona.insertNodo(3, "messi ", "lopez", "valverde");
+        persona.insertNodo(1, "cr7 ", "lopez", "valverde");
+        persona.insertNodo(6, "xavi ", "lopez", "valverde");
+        persona.insertNodo(4, "link ", "lopez", "valverde");
+        persona.insertNodo(7, "clack ", "lopez", "valverde");
+        persona.insertNodo(10, "naruto ", "lopez", "valverde");
+        persona.insertNodo(14, "niko ", "lopez", "valverde");
+        persona.insertNodo(13, "bryan ", "lopez", "valverde");
+
        File archivo =new File("C://Users//Javier//Desktop//Datos.txt") ;
         FileReader fr = null;
         BufferedReader br = null;
-
         try {
             
             fr = new FileReader(archivo);
@@ -63,10 +61,17 @@ public class Main {
                 e2.printStackTrace();
             }
         }
+        
+        
         long inicio = System.currentTimeMillis();
-         
+        System.out.println("Preorden ");
+        persona.preOrden(persona.returnRoot());
+        System.out.println("");
+        System.out.println("postorden");
+        persona.postOrden(persona.returnRoot());
+        System.out.println("");
+        System.out.println("Simetrico");
+        persona.simetrico(persona.returnRoot());
     }
-    
-    
+
 }
-            
