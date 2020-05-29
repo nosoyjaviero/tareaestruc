@@ -1,6 +1,6 @@
-package javaapplication13;
+package ClasesArboles;
 
-import javaapplication13.nodoPerson;
+import ClasesArboles.nodoPerson;
 
 /**
  * @author Nikole Moraga
