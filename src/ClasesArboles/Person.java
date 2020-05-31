@@ -19,6 +19,7 @@ public class Person {
 
     public synchronized void insertNodo(int id, String name, String fname, String sname) {
         nodoPerson nuevo = new nodoPerson();
+
         if (nodoP == null) { // si el arbol esta vacio, entonces, se inserta como raiz
             nuevo = new nodoPerson(id, name, fname, sname);
             nodoP = nuevo;
@@ -52,7 +53,7 @@ public class Person {
     }
 
     public synchronized void preOrden(nodoPerson person) {
-        
+
         System.out.print(" " + person.getId());
         if (person.getLeft() != null) {
             preOrden(person.getLeft());
@@ -63,7 +64,7 @@ public class Person {
     }
 
     public synchronized void postOrden(nodoPerson r) {
-        
+
         if (r.getLeft() != null) {
             postOrden(r.getLeft());
 
@@ -73,6 +74,24 @@ public class Person {
             postOrden(r.getRight());
         }
         System.out.print(" " + r.getId());
+    }
+
+    public nodoPerson buscar(int dato) {
+        nodoPerson aux = nodoP;
+        while (aux.getId() != dato) {
+            if (dato < aux.getId()) {
+
+                aux = aux.getLeft();
+
+            } else {
+                aux = aux.getRight();
+            }
+            if (aux==null){
+            return null;
+            }
+            
+        }
+        return aux;
     }
 
 }
