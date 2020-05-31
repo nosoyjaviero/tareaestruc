@@ -17,6 +17,8 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
         Person persona = new Person();
+        
+        
         persona.insertNodo(8, "javi", "lopex", "valverde");
         persona.insertNodo(3, "messi ", "lopez", "valverde");
         persona.insertNodo(1, "cr7 ", "lopez", "valverde");
@@ -26,33 +28,23 @@ public class Main {
         persona.insertNodo(10, "naruto ", "lopez", "valverde");
         persona.insertNodo(14, "niko ", "lopez", "valverde");
         persona.insertNodo(13, "bryan ", "lopez", "valverde");
-
+        
        File archivo =new File("C://Users//Javier//Desktop//Datos.txt") ;
         FileReader fr = null;
         BufferedReader br = null;
         try {
-            
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
-
-           
             String linea;
             while ((linea = br.readLine()) != null) {
-                
                 String[] datos = linea.split(",");
-                
                 if (datos != null) {
                    persona.insertNodo(Integer.valueOf(datos[0]),datos[5],datos[6],datos[7]);
-                 
                 }
-                
-
             }
         } catch (Exception e) {
             e.printStackTrace();
-            
         } finally {
-           
             try {
                 if (null != fr) {
                     fr.close();
@@ -62,8 +54,6 @@ public class Main {
             }
         }
         
-        
-        long inicio = System.currentTimeMillis();
         System.out.println("Preorden ");
         persona.preOrden(persona.returnRoot());
         System.out.println("");
@@ -72,6 +62,21 @@ public class Main {
         System.out.println("");
         System.out.println("Simetrico");
         persona.simetrico(persona.returnRoot());
+        
+        System.out.println("\n");
+        
+        
+        if (persona.buscar(9)!=null){
+        System.out.println("Cedula: "+ persona.buscar(3).getId());
+        System.out.println("Nombre: "+persona.buscar(3).getName());
+        System.out.println("Apellido: "+persona.buscar(3).getFirstLastName());
+        System.out.println("Segundo apellido: "+persona.buscar(3).getSecondLastName());
+        }else{
+            System.out.println("No existe el nodo");
+        }
     }
 
+    
+    
+    
 }
